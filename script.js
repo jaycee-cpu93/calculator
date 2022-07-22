@@ -1,12 +1,3 @@
-//onclick of a button i want to display the value of the button in a div container
-//i want to display the value of the button in a div container
-/* let firstOperand = document.getElementsByClassName("operand");
-console.log(firstOperand)
-let secondOperand = document.getElementsByClassName("operand").value;
-let operator = document.getElementsByClassName("operator").value;
-let result = document.getElementsByClassName("result").value; */
-//let clear = document.getElementsByClassName("clear");
- //div container to display the result
 let operandArr = [];
 
 function addition (num1, num2){
@@ -61,10 +52,7 @@ window.addEventListener("click",(e) => {
         let output = document.getElementById("output");
         let key = e.target.value;
         output.value = key;
-        //console.log(e.target.localName)
-        // if(key === "backspace"){
-        //     operandArr.pop(key);
-        // }
+
         console.log(e.target.classList.contains("operator"))
         if(e.target.classList.contains("operator")){
             console.log("i am an operator")
@@ -73,19 +61,22 @@ window.addEventListener("click",(e) => {
         if(key !== "=" && key !== "C" && key !== "bc"){
             operandArr.push(key)
         }
+        //bc button removes the last element from the array
         else if(key === "bc"){
             operandArr.pop(key);
         }
         output.value = ""; // to avoid double value
-        //console.log(operandArr)
+        //populate the array
         operandArr.forEach(numberInTheArr => {
             output.value += numberInTheArr;
         });
 
-        let firstAndSecondNumberOperator = getNumberAndNaNFromOperandArr()
-        //console.log(firstAndSecondNumberOperator)
+        let firstAndSecondNumberOperator = getNumberAndNaNFromOperandArr() //get the first and second number and operator
+        //the first number is the first element in the array
         let firstOperand = firstAndSecondNumberOperator[0];
         let secondOperand = firstAndSecondNumberOperator[1];
+
+        //operation is getting the actual operator
         let operation = operandArr[firstAndSecondNumberOperator[2]];
         let answer = 0
         if(key==="=" && operandArr.length > 1){
@@ -116,46 +107,5 @@ window.addEventListener("click",(e) => {
             //this will empty the array like this
             operandArr = []
         }
-
-        
     }
 });
-
-
-
-
-
-
-
-
-
-// function simpleCalculator() {
-//     var num1 = document.getElementById("num1").value;
-//     var num2 = document.getElementById("num2").value;
-//     var operator = document.getElementById("operator").value;
-//     var result = 0;
-//     if (operator == "+") {
-//         result = parseInt(num1) + parseInt(num2);
-//     } else if (operator == "-") {
-//         result = parseInt(num1) - parseInt(num2);
-//     } else if (operator == "*") {
-//         result = parseInt(num1) * parseInt(num2);
-//     } else if (operator == "/") {
-//         result = parseInt(num1) / parseInt(num2);
-//     }
-//     document.getElementById("result").value = result;
-// }  //end of simpleCalculator
-
-
-/* function operate(operator, num1, num2) {
-    if (operator === '+') {
-        return num1 + num2;
-    } else if (operator === '-') {
-        return num1 - num2;
-    } else if (operator === '*') {
-        return num1 * num2;
-    } else if (operator === '/') {
-        return num1 / num2;
-    }
-}
-console.log(operate('+', 1, 2)); */

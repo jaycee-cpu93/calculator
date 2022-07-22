@@ -53,15 +53,36 @@ button:active{
         padding-top: 30px;
         font-size: 400%;
         font-weight: bold;
-        background-color: #fff;
-        color: #444;
+        background-color: #b2b9b7;
+        color: black;
         border: 3px solid #444;
         overflow-x: hidden;
 }
 input{
     text-align: end;
+    cursor: not-allowed;
 }
-
-#zero{
-    grid-column: 1 / span 2;
+button.operator{
+    background-color: rgb(17, 223, 154);
+    color: #444;
+}
+button.operator:hover{
+    background-color: aquamarine;
+    color: #444;
+}
+button.operator:active{
+    background-color: #fff;
+    color: #444;
+}
+.special_operator{
+    background-color: dodgerblue;
+    color: #444;
+}
+.special_operator:hover{
+    background-color: skyblue;
+    color: #444;
+}
+.special_operator:active{
+    background-color: #fff;
+    color: #444;
 }
