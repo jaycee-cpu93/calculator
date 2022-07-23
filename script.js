@@ -1,5 +1,6 @@
 let operandArr = [];
 
+
 function addition (num1, num2){
     return num1 + num2
 }
@@ -14,7 +15,7 @@ function multiplication (num1,  num2){
 
 function division (num1, num2){
     if(num2 === 0){
-        return "0";
+        return "Infinity";
     }
     else {
     return num1 / num2
@@ -52,10 +53,6 @@ window.addEventListener("click",(e) => {
         output.value = key;
 
         console.log(e.target.classList.contains("operator"))
-        if(e.target.classList.contains("operator")){
-            console.log("i am an operator")
-            output.value = "";
-        }
         if(key !== "=" && key !== "C" && key !== "bc"){
             operandArr.push(key)
         }
@@ -104,7 +101,7 @@ window.addEventListener("click",(e) => {
             //this will empty the input_field (calculator display), after i also need to empty/clear the array 
             output.value = "";
             //this will empty the array like this
-            operandArr = []
+            operandArr = [];
         }
     }
 });
