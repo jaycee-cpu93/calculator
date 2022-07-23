@@ -100,7 +100,9 @@ window.addEventListener("click",(e) => {
                 answer = decimalPoint(firstOperand)
             }
             output.value = answer
+
         }
+
         if (key ==="C") {
             //this will empty the input_field (calculator display), after i also need to empty/clear the array 
             output.value = "";
@@ -108,4 +110,8 @@ window.addEventListener("click",(e) => {
             operandArr = []
         }
     }
+});
+window.addEventListener('keydown', function(e){
+    const keyboard = document.querySelector(`button[data-key='${e.keyCode}']`);
+    keyboard.click();
 });
