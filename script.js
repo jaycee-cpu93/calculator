@@ -38,11 +38,9 @@ function getNumberAndNaNFromOperandArr() {
     let operatorIndex = operandArr.indexOf(operator);
     console.log(operatorIndex)
 
-    //let firstNumber = operandArr[operatorIndex - 1];
-    //let secondNumber = operandArr[operatorIndex + 1];
     let firstOperationnumber = parseFloat(operandArr.slice(0, operatorIndex).join(""));
     let secondOperationnumber = parseFloat(operandArr.slice(operatorIndex + 1, operandArr.length).join(""));
-    //console.log([firstOperationnumber, secondOperationnumber, operatorIndex]);
+    
     return [firstOperationnumber, secondOperationnumber, operatorIndex];
 }
 
@@ -75,7 +73,6 @@ window.addEventListener("click",(e) => {
         //the first number is the first element in the array
         let firstOperand = firstAndSecondNumberOperator[0];
         let secondOperand = firstAndSecondNumberOperator[1];
-
         //operation is getting the actual operator
         let operation = operandArr[firstAndSecondNumberOperator[2]];
         let answer = 0
