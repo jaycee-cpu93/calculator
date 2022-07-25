@@ -6,32 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js" defer></script> -->
     <script src="script.js" defer></script>
 </head>
 <body>
         <div class="calc">
             <div class="wrapper">
-                <input id="output" type="text"   disabled/>
-                <button class="special_operator" value="C" data-key="127" id="clear"  type="button">C</button>
-                <button class="special_operator" value="bc" data-key="8" type="button">BC</button>
-                <button class="special_operator" value="+/-" data-key="192"  type="button">+/-</button>
-                <button class="operator"  value="-" data-key="189" type="button">-</button>
-                <button class="operand" value="1" data-key="49" type="button">1</button>
-                <button class="operand" value="2" data-key="50" type="button">2</button>
-                <button class="special_operator" data-key="37"  value="%" data-key="8" type="button">%</button>
-                <button class="operator" value="+" data-key="107"  type="button">+</button>
-                <button class="operand" value="3" data-key="51" type="button">3</button>
-                <button class="operand" value="4" data-key="52" type="button">4</button>
-                <button class="operand" value="5" data-key="53" type="button">5</button>
-                <button class="operator"  value="/" data-key="47" type="button">/</button>
-                <button class="operand" value="6" data-key="54" type="button">6</button>
-                <button class="operand" value="7" data-key="55" type="button">7</button>
-                <button class="operand" value="8"  data-key="56" type="button">8</button>
-                <button class="operator"  value="*" data-key="42" type="button">*</button>
-                <button class="operand" value="9" data-key="57" type="button">9</button>
-                <button class="operand" value="0" data-key="48" type="button">0</button>
-                <button class="decimal" value="." data-key="46"id="decimal" type="button">.</button>
-                <button class="operator" value="=" data-key="187" type="button">=</button>
+                <p id="last_operation_history" hidden></p>
+                <p id="output" type="text" value="">0</p>
+                <button class="special_operator" value="C" data-key="127" id="clear"  type="button"  onclick="button_clear()">C</button>
+                <button class="special_operator" id="backspace_btn" value="BC" data-key="8" type="button" onclick="backspace_remove()">BC</button>
+                <button class="special_operator" data-key="37"  value="%" data-key="8" type="button" onclick="calculate_percentage()">%</button>
+                <button class="operator" id="subOp"  value="-" data-key="189" type="button" onclick="button_number('-')" >-</button>
+                <button class="operand" value="1" data-key="49" type="button" onclick="button_number(1)">1</button>
+                <button class="operand" value="2" data-key="50" type="button" onclick="button_number(2)">2</button>
+                <button class="operand" value="3" data-key="51" type="button" onclick="button_number(3)">3</button>
+                <button class="operator" id="plusOp" value="+" data-key="107"  type="button" onclick="button_number('+')">+</button>
+                <button class="operand" value="4" data-key="52" type="button" onclick="button_number(4)">4</button>
+                <button class="operand" value="5" data-key="53" type="button" onclick="button_number(5)">5</button>
+                <button class="operand" value="6" data-key="54" type="button" onclick="button_number(6)">6</button>
+                <button class="operator" id="divOp"  value="/" data-key="47" type="button" onclick="button_number('/')">/</button>
+                <button class="operand" value="7" data-key="55" type="button" onclick="button_number(7)">7</button>
+                <button class="operand" value="8"  data-key="56" type="button" onclick="button_number(8)">8</button>
+                <button class="operand" value="9" data-key="57" type="button" onclick="button_number(9)">9</button>
+                <button class="operator" id="multiOp"  value="*" data-key="42" type="button" onclick="button_number('*')">*</button>
+                
+                <button class="operand" id="zero" value="0" data-key="48" type="button" onclick="button_number(0)">0</button>
+                <button class="decimal" value="." data-key="46" id="dot" type="button" onclick="button_number('.')">.</button>
+                <button class="operator" id="equal_sign" value="=" data-key="187" type="button" onclick="button_number('=')">=</button>
             </div>
         </div> 
 </body>

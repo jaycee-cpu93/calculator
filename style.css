@@ -51,16 +51,17 @@ button:active{
         font-size: 200%;
         border-radius: 5px;
         padding-top: 30px;
+        font-family:'Trebuchet MS', sans-serif;
         font-size: 400%;
         font-weight: bold;
         background-color: #b2b9b7;
-        color: black;
+        color: rgb(0, 0, 0);
         border: 3px solid #444;
         overflow-x: hidden;
+        text-align: end;
 }
-input{
-    text-align: end;
-    cursor: not-allowed;
+#last_operation_history{
+    color: #fff;
 }
 button.operator{
     background-color: rgb(17, 223, 154);
@@ -86,7 +87,6 @@ button.operator:active{
     background-color: #fff;
     color: #444;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+#zero{
+    grid-column: 1 / span 2;
 }
