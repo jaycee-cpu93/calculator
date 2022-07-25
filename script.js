@@ -138,9 +138,7 @@ function button_number(button) {
                 if (!last_operation_history.innerText.includes("=")){
                     last_operation_history.innerText += " " + numbers[1] + " ="
                 }
-
                 temp_num = numbers[0]
-
                 numbers[0] = total
                 operator_value = null
                 showSelectedOperator()
@@ -207,10 +205,6 @@ function backspace_remove(){
     output = document.getElementById("output");
     let elements = document.getElementsByClassName("operator");
 
-    // for (let i=0; i<elements.length; i++){
-    //     elements[i].style.backgroundColor  = "#e68a00";
-    // }
-
     let last_num = output.innerText;
     last_num = last_num.slice(0, -1)
     
@@ -270,30 +264,6 @@ function plus_minus(){
     output.innerText = -output.innerText
 }
 
-// function to calculate square root of the number currently on screen
-function square_root(){
-    output = document.getElementById("output");
-    let square_num = Math.sqrt(output.innerText)
-    output.innerText = square_num
-    numbers.push(square_num)
-}
-
-// function to calculate the division of 1 with the number currently on screen
-function division_one(){
-    output = document.getElementById("output");
-    let square_num = 1/output.innerText
-    output.innerText = square_num
-    numbers.push(square_num)
-}
-
-// function to calculate the power of the number currently on screen
-function power_of(){
-    output = document.getElementById("output");
-    let square_num =Math.pow(output.innerText, 2)
-    output.innerText = square_num
-    numbers.push(square_num)
-}
-
 // function to calculate the percentage of a number
 function calculate_percentage(){
     let elements = document.getElementsByClassName("operator");
@@ -312,11 +282,6 @@ function calculate_percentage(){
     }
     numbers = []
     numbers.push(output.innerText)
-
-    // deselect operator if any selected
-    // for (let i=0; i<elements.length; i++){
-    //     elements[i].style.backgroundColor  = "#e68a00";
-    // }
 }
 
 // function to clear last number typed into the display
